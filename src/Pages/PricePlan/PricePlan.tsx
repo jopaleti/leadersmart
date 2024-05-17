@@ -1,4 +1,4 @@
-import { Footer } from "../../Components";
+
 import VendorFooter from "../../Components/VendorFooter/VendorFooter";
 import VendorNavbar from "../../Components/VendorNavbar/VendorNavbar";
 import "./PricePlan.scss";

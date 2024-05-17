@@ -1,6 +1,6 @@
 import "./plan.scss";
 import { VendorDashTemplate } from "../../Components";
-import { car, visa } from "../../assets";
+import { visa } from "../../assets";
 
 function PlanBill() {
   return (

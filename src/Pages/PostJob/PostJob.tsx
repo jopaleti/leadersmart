@@ -5,13 +5,10 @@ import ReactFlagsSelect from "react-flags-select";
 import { useNavigate } from "react-router-dom";
 
 function PostJob() {
-  const [dropDown, setDropDown] = useState(false);
     const [selected, setSelected] = useState("US");
     const navigate = useNavigate();
 
-  const handleDropdown = () => {
-    setDropDown((prevState) => !prevState);
-  };
+ 
   return (
     <VendorDash>
       <div className="__post_job">
