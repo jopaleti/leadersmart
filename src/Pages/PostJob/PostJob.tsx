@@ -5,10 +5,22 @@ import ReactFlagsSelect from "react-flags-select";
 import { useNavigate } from "react-router-dom";
 
 function PostJob() {
-    const [selected, setSelected] = useState("US");
-    const navigate = useNavigate();
+  const [selected, setSelected] = useState("US");
+  const navigate = useNavigate();
+  interface CustomLabel {
+    secondary: string;
+    primary: string;
+  }
 
- 
+  interface CustomLabels {
+    [key: string]: CustomLabel;
+  }
+  const customLabels: CustomLabels = {
+    US: { primary: "United States", secondary: "+1" },
+    GB: { primary: "United Kingdom", secondary: "+44" },
+    NG: { primary: "Nigeria", secondary: "+234" },
+  };
+
   return (
     <VendorDash>
       <div className="__post_job">
@@ -28,11 +40,7 @@ function PostJob() {
                 <ReactFlagsSelect
                   className="__flag"
                   countries={["US", "GB", "NG"]}
-                  customLabels={{
-                    US: { secondary: "+1" },
-                    GB: { secondary: "+44" },
-                    NG: { secondary: "+234" },
-                  }}
+                  customLabels={customLabels}
                   selected={selected}
                   onSelect={(code: any) => setSelected(code)}
                 />
@@ -60,11 +68,7 @@ function PostJob() {
                 <ReactFlagsSelect
                   className="__flag"
                   countries={["US", "GB", "NG"]}
-                  customLabels={{
-                    US: { secondary: "+1" },
-                    GB: { secondary: "+44" },
-                    NG: { secondary: "+234" },
-                  }}
+                  customLabels={customLabels}
                   selected={selected}
                   onSelect={(code: any) => setSelected(code)}
                 />
