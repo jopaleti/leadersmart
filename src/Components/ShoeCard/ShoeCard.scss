@@ -1,0 +1,13 @@
+.__shoe_card {
+  max-width: 32%;
+  @media (max-width: 490px) {
+    max-width: 48%;
+    // width: 48%;
+  }
+  img {
+    height: 196px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -1,0 +1,46 @@
+.__plan_bill {
+    .__standard {
+        @media (max-width: 950px) {
+            padding-right: 10px;
+            gap: 10px;
+            button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+    }
+    .__plan_con {
+        @media (max-width: 950px) {
+            flex-direction: column;
+        }
+    }
+  .__plan_left {
+    width: 60%;
+    @media (max-width: 950px) {
+      width: 100%;
+    }
+  }
+  .__plan_right {
+    width: 36%;
+    @media (max-width: 950px) {
+      width: 100%;
+    }
+  }
+  .__plan_pay_con {
+    @media (max-width: 950px) {
+            flex-direction: column;
+        }
+  }
+  .__pay_left {
+    width: 30%;
+    @media (max-width: 950px) {
+      width: 100%;
+    }
+  }
+  .__pay_right {
+    width: 67%;
+    @media (max-width: 950px) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.__message_container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  @media (max-width: 1019px) {
+    width: 90%;
+    @media (max-width: 692px) {
+      padding-left: 10px;
+    }
+  }
+  .__msg_container {
+    margin-top: 30px;
+    margin-left: 20px;
+    @media (max-width: 692px) {
+      flex-direction: column;
+    }
+  }
+  .__message_left {
+    width: 30%;
+    padding-bottom: 100px;
+    border-right: 1px solid #ebeef7;
+    padding-right: 50px;
+    padding-top: 20px;
+    @media (max-width: 692px) {
+      width: 100%;
+      padding-bottom: 12px;
+    }
+  }
+  .__message_right {
+    width: 70%;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    @media (max-width: 692px) {
+      width: 100%;
+      padding-left: 0px;
+    }
+  }
+}

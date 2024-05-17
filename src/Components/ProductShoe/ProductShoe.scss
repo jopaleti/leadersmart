@@ -1,0 +1,17 @@
+.__product-shoe {
+  max-width: 220px;
+  //   Modification Start
+  @media (max-width: 691px) {
+    max-width: 196px;
+    @media (max-width: 456px) {
+      max-width: 164px;
+    }
+  }
+  //   Modification ends
+  .__product-shoe-img {
+    height: 170px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+}

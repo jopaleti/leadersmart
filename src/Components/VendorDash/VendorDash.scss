@@ -1,0 +1,23 @@
+.__vendor_dash {
+  .__check_step {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    .__checkout_split {
+      width: 32%;
+      min-width: 220px;
+    }
+  }
+  .active {
+    position: relative;
+    ::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #00AAFF;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

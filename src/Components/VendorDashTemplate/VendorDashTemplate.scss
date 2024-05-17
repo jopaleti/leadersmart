@@ -1,0 +1,25 @@
+.__v_dash_t {
+  .__v_flex {
+    width: 70%;
+    @media (max-width: 1048px) {
+      width: 85%;
+      @media (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+    margin-left: auto;
+    margin-right: auto;
+    .__v_left {
+      width: 26%;
+      @media (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    .__v_right {
+      width: 70%;
+      @media (max-width: 700px) {
+        width: 100%;
+      }
+    }
+  }
+}

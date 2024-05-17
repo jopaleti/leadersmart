@@ -1,0 +1,30 @@
+.__search_bar {
+  form {
+    width: 500px;
+    @media (max-width: 760px) {
+      width: 400px;
+      @media (max-width: 660px) {
+        width: 300px;
+        @media (max-width: 5595px) {
+          width: 200px;
+          @media (max-width: 459px) {
+            width: 170px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav--top {
+  h1 {
+    @media (max-width: 459px) {
+      font-size: 14px;
+    }
+  }
+}
+.__nav {
+  @media (max-width: 397px) {
+    gap: 30px;
+  }
+}

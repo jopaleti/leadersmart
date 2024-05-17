@@ -1,0 +1,47 @@
+.__checkout_template {
+    .__check_step {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+  .__checkout_flex {
+    @media (max-width: 960px) {
+      flex-direction: column;
+    }
+  }
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  .__checkout_main {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    .__check_main {
+      width: 75%;
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+      .__checkout_split {
+        width: 32%;
+        min-width: 220px;
+      }
+      .active {
+        position: relative;
+        ::after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: #814631;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .__check_left {
+      width: 25%;
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+    }
+  }
+}
