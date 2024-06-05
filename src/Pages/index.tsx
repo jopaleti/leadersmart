@@ -17,6 +17,7 @@ import FavouriteAds from "./FavouriteAds/FavouriteAds";
 import PlanBill from "./PlanBill/PlanBill";
 import PricePlan from "./PricePlan/PricePlan";
 import Message from "./Message/Message";
+import CategoryList from "./CategoryList/CategoryList";
 
 export {
   CheckDetails,
@@ -37,5 +38,6 @@ export {
   FavouriteAds,
   PlanBill,
   PricePlan,
-  Message
+  Message,
+  CategoryList
 };

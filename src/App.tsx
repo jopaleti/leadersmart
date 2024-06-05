@@ -17,6 +17,7 @@ import {
   PlanBill,
   PricePlan,
   Message,
+  CategoryList,
 } from "./Pages";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/planbill" element={<PlanBill />} />
           <Route path="/priceplan" element={<PricePlan />} />
           <Route path="/message" element={<Message />} />
+          <Route path="/category" element={<CategoryList />} />
         </Routes>
       </BrowserRouter>
     </>
