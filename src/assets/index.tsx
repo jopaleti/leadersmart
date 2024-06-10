@@ -31,6 +31,7 @@ import ver from "./ver.png";
 import phone from "./phone.png";
 import car from "./car.png";
 import visa from "./visa.png";
+import ring from "./ring.png";
 
 export {
   prof,
@@ -66,4 +67,5 @@ export {
   phone,
   car,
   visa,
+  ring
 };

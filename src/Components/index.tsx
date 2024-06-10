@@ -15,6 +15,7 @@ import VendorDashTemplate from "./VendorDashTemplate/VendorDashTemplate";
 import VendorDash from "./VendorDash/VendorDash";
 import LoginModal from "./LoginModal/LoginModal";
 import VendorSignUp from "./VendorSignUp/VendorSignUp";
+import AdCard from "./AdCard/AdCard";
 
 export {
   Navbar,
@@ -33,5 +34,6 @@ export {
   VendorDashTemplate,
   VendorDash,
   LoginModal,
-  VendorSignUp
+  VendorSignUp,
+  AdCard
 };
