@@ -1,6 +1,8 @@
 import { AdCard, Navbar } from "../../Components";
 import "./CategoryList.scss";
 import { useState } from "react";
+import VendorFooter from "../../Components/VendorFooter/VendorFooter";
+import productItems from "../../dummy";
 
 function CategoryList() {
   const [isOpen, setIsOpen] = useState(false);
@@ -540,6 +542,26 @@ function CategoryList() {
           </div>
 
           <div className="__main_right">
+            {/* Handle category for mobile view */}
+            <div className="__category_mobile py-2">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="black"
+                  className="bi bi-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+              </button>
+
+              <div>{/* <CategoryDrop /> */}</div>
+            </div>
             <div className="flex items-stretch justify-start gap-4 shrink-0 flex-wrap">
               {[1, 2, 3, 7, 8, 9].map((x) => (
                 <div className="__adcard">
@@ -549,6 +571,9 @@ function CategoryList() {
             </div>
           </div>
         </main>
+      </div>
+      <div className="mt-14">
+        <VendorFooter />
       </div>
     </div>
   );

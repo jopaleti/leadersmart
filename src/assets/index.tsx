@@ -32,6 +32,8 @@ import phone from "./phone.png";
 import car from "./car.png";
 import visa from "./visa.png";
 import ring from "./ring.png";
+import priceimg from "./priceimg.png";
+import chatavar from "./chatavar.png";
 
 export {
   prof,
@@ -67,5 +69,7 @@ export {
   phone,
   car,
   visa,
-  ring
+  ring,
+  priceimg,
+  chatavar
 };

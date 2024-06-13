@@ -99,9 +99,9 @@ function VendorSignUp() {
             </div>
             <div className="mt-4">
               <p className="font-medium" style={{ fontSize: "12px" }}>
-                Not a personal account?{" "}
+                Not a vendor account?{" "}
                 <a style={{ color: "#814631" }}>
-                  Sign up for a vendor’s
+                  Sign up for a personal
                   <br /> account
                 </a>
               </p>

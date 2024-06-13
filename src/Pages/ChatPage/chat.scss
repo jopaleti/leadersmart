@@ -1,0 +1,26 @@
+.__chat_container {
+  overflow-y: auto;
+  height: 420px;
+  border: 1px solid #ebeef7;
+  border-radius: 10px;
+  .__chat_left {
+    width: 30%;
+    overflow-y: auto;
+  }
+  .__chat_right {
+    width: 70%;
+    overflow-y: auto;
+    .__chat_bottom {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      input {
+        border: 1px solid #ebeef7;
+        border-right: unset !important;
+      }
+    }
+    .__middle_container {
+      overflow-y: auto;
+    }
+  }
+}

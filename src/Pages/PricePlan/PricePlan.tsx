@@ -1,9 +1,36 @@
 
+import { priceimg } from "../../assets";
 import VendorFooter from "../../Components/VendorFooter/VendorFooter";
 import VendorNavbar from "../../Components/VendorNavbar/VendorNavbar";
 import "./PricePlan.scss";
 
 function PricePlan() {
+  const benefits = [
+    {
+      id: 1,
+      header: "Special badges for your ads",
+      content:
+        "Aenean eu urna tortor. Vestibulum ultrices ex erat, ut aliquam erat euismod in. Praesent convallis lobortis vehicula. In in massa nisl. Vivamus maximus odio et suscipit pretium. Curabitur at semper nisi, at molestie urna. Sed in mattis turpis.",
+    },
+    {
+      id: 2,
+      header: "Dedicated customer support",
+      content:
+        "Nunc tempus rhoncus venenatis. Nam eu elit id dolor hendrerit lobortis. Mauris mollis leo at ex lobortis dignissim. Aenean ac fermentum augue. Praesent suscipit nisi ut malesuada posuere. Morbi lacinia magna nunc.",
+    },
+    {
+      id: 3,
+      header: "Advertise your brand on Adlisting",
+      content:
+        "Cras id urna id orci aliquet aliquet at a nisl. Cras eleifend odio sed aliquam feugiat. Mauris velit felis, sagittis quis fermentum in, cursus sit amet leo. Duis lobortis erat nec arcu varius accumsan. Nullam bibendum nec libero a mollis. ",
+    },
+    {
+      id: 4,
+      header: "Add video and more images",
+      content:
+        "Sed sed mattis eros. Aenean eu tortor et urna mattis egestas. Maecenas vel massa non ligula tempus molestie. Sed non nisl nec tellus porta feugiat ac eu enim. Phasellus ultrices tortor id est ullamcorper, et rutrum nisi blandit.",
+    },
+  ];
   return (
     <div className="__price_plan">
       <VendorNavbar />
@@ -25,6 +52,53 @@ function PricePlan() {
       </div>
 
       {/* Main section */}
+
+      <div className="__priceplan_container pt-20 pb-10 bg-white">
+        <div className="flex justify-between items-start __priceplan_cont_flex">
+          <div className="__price_cont_left">
+            <h1>Increase your salse using adlisting memebership.</h1>
+            <p>
+              Fusce vulputate turpis non nulla efficitur posuere. Nam lorem
+              velit, pharetra vel blandit sed, rutrum nec elit. Etiam pulvr
+              augueda eleifend, iaculis turpis vel, viverra nisl. Sed ipsum
+              malesuada at lacinia.
+            </p>
+          </div>
+          <div className="__price_cont_right">
+            <img src={priceimg} alt="img.jpg" />
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits section */}
+      <div className="__benefit_container pb-10 pt-14 bg-[#F5F7FA]">
+        <h1 className="text-center">Benefits & feature of membership</h1>
+        <div className="__benefit_flex_container mt-8">
+          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            {benefits &&
+              benefits.map((item) => (
+                <div className="py-4 pl-4 md:pl-20 pr-4 bg-white rounded-lg shadow-lg" key={item.id}>
+                  <h3
+                    style={{
+                      color: "#191F33",
+                      fontSize: "16",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {item.header}
+                  </h3>
+                  <p
+                    className="mt-3"
+                    style={{ fontSize: "12px", color: "#767E94" }}
+                  >
+                    {item.content}
+                  </p>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+
       <div className="mt-6 flex items-center justify-center px-5 flex-col">
         <h3 className="font-medium text-center" style={{ fontSize: "26px" }}>
           Gert membership right now

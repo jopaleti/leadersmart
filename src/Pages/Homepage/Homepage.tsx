@@ -2,13 +2,17 @@ import { bag, coll, flash, frame, prof} from "../../assets";
 import {
   Card,
   LoginModal,
+  MessageList,
+  Navbar,
   Reel,
   ShoeCard,
   VendorSignUp,
+  UserSignUp
 } from "../../Components";
 import "./Homepage.scss";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
+import VendorFooter from "../../Components/VendorFooter/VendorFooter";
 
 function Homepage() {
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -16,10 +20,12 @@ function Homepage() {
   const [openSignUpX, setOpenSignUpX] = useState(false);
   const [openSigninX, setOpenSignInX] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [UserSignUpX, setUserSignUpX] = useState(false);
   const modalRef1: any = useRef();
   const modalRef2: any = useRef();
   const modalRef3: any = useRef();
   const modalRef4: any = useRef();
+  const modalRef5: any = useRef();
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (modalRef1.current && !modalRef1.current.contains(event.target)) {
@@ -34,9 +40,12 @@ function Homepage() {
       if (modalRef4.current && !modalRef4.current.contains(event.target)) {
         setOpenSignIn(false);
       }
+      if (modalRef5.current && !modalRef5.current.contains(event.target)) {
+        setUserSignUpX(false);
+      }
     };
 
-    if (openSignUpX || openSigninX || openSignin || openSignUp) {
+    if (openSignUpX || openSigninX || openSignin || openSignUp || UserSignUpX) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -45,69 +54,14 @@ function Homepage() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [openSigninX, openSignUpX, openSignUp, openSignin]);
+  }, [openSigninX, openSignUpX, openSignUp, openSignin, UserSignUpX]);
   return (
-    <div style={{ backgroundColor: "#F1F1F1" }}>
-      {/* Navbar Start */}
-      <div className="bg-white flex justify-start px-8 py-4 items-center gap-10 md:gap-20 shadow-lg __nav">
-        <div className="flex justify-center items-center gap-5 nav--top">
-          <div>
-            <button onClick={() => setOpenModal(true)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="black"
-                className="bi bi-list"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-                />
-              </svg>
-            </button>
-          </div>
-          <h1 className="text-lg">Leathers’ Mart</h1>
-        </div>
-        <div className="__search_bar">
-          <form className="mx-auto">
-            {/* <label
-            htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label> */}
-            <div className="relative w-full">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="default-search"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                style={{ backgroundColor: "#F1F1F1", color: "black" }}
-                placeholder="Search"
-                required
-              />
-            </div>
-          </form>
-        </div>
+    <div style={{ backgroundColor: "#F1F1F1" }} className="relative">
+      <div className="__chat_list fixed overflow-y-auto">
+        <MessageList />
       </div>
+      {/* Navbar Start */}
+      <Navbar />
       {/* <Navbar /> */}
       {/* Login modal */}
       <div
@@ -129,6 +83,13 @@ function Homepage() {
             <LoginModal />
           </div>
         )}
+        {
+          UserSignUpX && (
+            <div ref={modalRef5}>
+              <UserSignUp />
+            </div>
+          )
+        }
         {/* <LoginModal /> */}
       </div>
       <div className="__home_page pt-3 flex justify-between items-start">
@@ -249,13 +210,47 @@ function Homepage() {
         <div className="template_middle">
           <div className="__carousel_container">
             {/* Carousel goes here... */}
-            <img src={flash} alt="" className="w-full" />
+            <img src={flash} alt="" className="w-full h-full" />
           </div>
           {/* Filter divider */}
           <div className="flex gap-4 my-4 items-center justify-between">
-            <span
-              style={{ width: "88%", height: "2px", background: "#898989" }}
-            ></span>
+            <div style={{ width: "88%", background: "transparent" }}>
+              <div className="__search_bar">
+                <form className="mx-auto">
+                  <div className="w-full">
+                    <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="search"
+                      id="default-search"
+                      className="block outline-none w-full p-2 rounded-lg ps-10 text-sm text-gray-900"
+                      style={{
+                        backgroundColor: "#F1F1F1",
+                        color: "black",
+                        border: "1px solid #814631",
+                      }}
+                      placeholder="Search"
+                      required
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
             <h3 className="text-sm">
               Filter: <span className="font-bold">Top</span>
             </h3>
@@ -357,37 +352,15 @@ function Homepage() {
         <div className="template_right">
           <div className="bg-white shadow-lg p-6 rounded-lg">
             <div className="flex flex-col gap-4">
-              <h1 className="font-bold">Welcome to Cobbs’ Mart !</h1>
+              <h1 className="font-bold">Welcome to Leather's Mart !</h1>
               <button
                 className="w-full px-4 py-2 text-sm rounded-sm __sign_btn"
-                onClick={() => setOpenSignUp((prevState) => !prevState)}
+                onClick={() => setUserSignUpX((prevState) => !prevState)}
               >
-                Sign up with phone or email
+                Create user account
               </button>
-              <div className="flex justify-between items-center w-full">
-                <span
-                  className="w-1/2"
-                  style={{ backgroundColor: "#EBEEF7", height: "2px" }}
-                ></span>
-                <h1 style={{ color: "#EBEEF7" }} className="px-2">
-                  or
-                </h1>
-                <span
-                  className="w-1/2"
-                  style={{ backgroundColor: "#EBEEF7", height: "2px" }}
-                ></span>
-              </div>
+              
 
-              <div className="mt-2">
-                <button className="w-full px-4 py-2 text-sm rounded-sm __sign_btn2">
-                  Continue with Google
-                </button>
-              </div>
-              <div className="mt-2">
-                <button className="w-full px-4 py-2 text-sm rounded-sm __sign_btn2">
-                  Continue with Apple
-                </button>
-              </div>
               <div className="mt-2">
                 <button
                   onClick={() => setOpenSignIn((prevState) => !prevState)}
@@ -647,6 +620,11 @@ function Homepage() {
           </div>
         </aside>
       )}
+
+      {/* Footer */}
+      <div className="__footer">
+        <VendorFooter />
+      </div>
     </div>
   );
 }

@@ -1,8 +1,24 @@
 import { car } from "../../assets";
-import { VendorDashTemplate } from "../../Components";
+import { AddProduct, CartPopup, VendorDashTemplate } from "../../Components";
 import "./MyAds.scss";
-
+import { useState, useRef, useEffect } from "react";
 function MyAds() {
+  const [isVisible, setIsVisible] = useState(true);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target as Node)
+    ) {
+      setIsVisible(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <VendorDashTemplate
       breadcrumb="Home / Dashboard "
@@ -10,7 +26,15 @@ function MyAds() {
       myAds={true}
       background="#191F33"
     >
-      <div className="__myAds">
+      <div className="__myAds relative">
+        {/* Display none onclicking the outside of the popup */}
+        {isVisible && (
+          <div ref={sidebarRef}>
+            {/* <CartPopup /> */}
+            {/* <AddProduct /> */}
+          </div>
+        )}
+
         {/* My Adds children */}
         <div className="flex items-center justify-between">
           <div className="__item_left">

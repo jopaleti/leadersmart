@@ -18,6 +18,7 @@ import {
   PricePlan,
   Message,
   CategoryList,
+  ChatPage
 } from "./Pages";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -46,6 +47,7 @@ function App() {
           <Route path="/priceplan" element={<PricePlan />} />
           <Route path="/message" element={<Message />} />
           <Route path="/category" element={<CategoryList />} />
+          <Route path="/chat" element={<ChatPage />} />
         </Routes>
       </BrowserRouter>
     </>

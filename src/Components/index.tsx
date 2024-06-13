@@ -16,6 +16,11 @@ import VendorDash from "./VendorDash/VendorDash";
 import LoginModal from "./LoginModal/LoginModal";
 import VendorSignUp from "./VendorSignUp/VendorSignUp";
 import AdCard from "./AdCard/AdCard";
+import CategoryDrop from "./CategoryDrop/CategoryDrop";
+import CartPopup from "./CartPopup/CartPopup";
+import AddProduct from "./AddProduct/AddProduct";
+import MessageList from "./MessageList/MessageList";
+import UserSignUp from "./UserSignUp/UserSignUp";
 
 export {
   Navbar,
@@ -35,5 +40,10 @@ export {
   VendorDash,
   LoginModal,
   VendorSignUp,
-  AdCard
+  AdCard,
+  CategoryDrop,
+  CartPopup,
+  AddProduct,
+  MessageList,
+  UserSignUp
 };

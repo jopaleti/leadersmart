@@ -1,11 +1,16 @@
 .__main_x {
   .__main {
-    width: 80%;
+    .__category_mobile {
+      @media (min-width: 1218px) {
+        display: none;
+      }
+    }
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
     @media (max-width: 500px) {
-            width: 90%;
-          }
+      width: 90%;
+    }
     .__main_left {
       width: 30%;
       // Accordion.scss
@@ -89,10 +94,13 @@
       width: 32%;
       @media (max-width: 1000px) {
         width: 30%;
-        @media (max-width: 779px) {
-          width: 48%;
-          @media (max-width: 500px) {
-            width: 46%;
+        @media (max-width: 996px) {
+          width: 32%;
+          @media (max-width: 833px) {
+            width: 48%;
+            @media (max-width: 500px) {
+              width: 46%;
+            }
           }
         }
       }

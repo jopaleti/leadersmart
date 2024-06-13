@@ -5,27 +5,26 @@ import { useState, useRef } from "react";
 import { useEffect } from "react";
 
 function VendorNavbar() {
-    const [mobileMenu, setMobileMenu] = useState(false);
-    const mobileRef: any = useRef();
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const mobileRef: any = useRef();
 
-    useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (mobileRef.current && !mobileRef.current.contains(event.target)) {
-                setMobileMenu(false);
-            }
-          
-            if (mobileMenu) {
-                document.addEventListener("mousedown", handleClickOutside);
-            } else {
-                document.removeEventListener("mousedown", handleClickOutside);
-            }
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (mobileRef.current && !mobileRef.current.contains(event.target)) {
+        setMobileMenu(false);
+      }
 
-            return () => {
-                document.removeEventListener("mousedown", handleClickOutside);
-            };
+      if (mobileMenu) {
+        document.addEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
 
-        };
-    }, [mobileMenu,]);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    };
+  }, [mobileMenu]);
   return (
     <div className="__v_navbar py-3">
       {/* Mobile menu dropdown */}
@@ -68,7 +67,9 @@ function VendorNavbar() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="__logo flex items-center gap-3">
-            <img src={rec} alt="" />
+            <Link to="/">
+              <img src={rec} alt="logo.png" />
+            </Link>
             <h1 className="text-lg font-semibold">Leathers’ Mart</h1>
           </div>
           <div className="flex items-center gap-5 justify-start __v_nav_middle">
