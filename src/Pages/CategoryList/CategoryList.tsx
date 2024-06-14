@@ -563,11 +563,12 @@ function CategoryList() {
               <div>{/* <CategoryDrop /> */}</div>
             </div>
             <div className="flex items-stretch justify-start gap-4 shrink-0 flex-wrap">
-              {[1, 2, 3, 7, 8, 9].map((x) => (
-                <div className="__adcard">
-                  <AdCard />
-                </div>
-              ))}
+              {productItems &&
+                productItems.map((item: any) => (
+                  <div className="__adcard" key={item.id}>
+                    <AdCard item={item} />
+                  </div>
+                ))}
             </div>
           </div>
         </main>

@@ -19,6 +19,7 @@ import PricePlan from "./PricePlan/PricePlan";
 import Message from "./Message/Message";
 import CategoryList from "./CategoryList/CategoryList";
 import ChatPage from "./ChatPage/ChatPage";
+import ProductView from "./ProductView/ProductView";
 
 export {
   CheckDetails,
@@ -41,5 +42,6 @@ export {
   PricePlan,
   Message,
   CategoryList,
-  ChatPage
+  ChatPage,
+  ProductView
 };

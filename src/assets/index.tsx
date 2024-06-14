@@ -34,12 +34,27 @@ import visa from "./visa.png";
 import ring from "./ring.png";
 import priceimg from "./priceimg.png";
 import chatavar from "./chatavar.png";
+import star from "./star.png";
+import verif from "./verif.png";
+import hand from "./hand.png";
+import chk from "./chk.png";
+import what from "./what.png";
+import pin from "./pin.png";
+import chain from "./chain.png";
+import fac from "./fac.png";
+import twi from "./twi.png";
+import ln from "./ln.png";
 
 export {
   prof,
   frame,
   coll,
   bag,
+  pin,
+  chain,
+  fac,
+  twi,
+  ln,
   flash,
   verified,
   prof_pic,
@@ -71,5 +86,10 @@ export {
   visa,
   ring,
   priceimg,
-  chatavar
+  chatavar,
+  star,
+  verif,
+  hand,
+  chk,
+  what,
 };

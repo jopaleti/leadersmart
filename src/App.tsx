@@ -18,7 +18,8 @@ import {
   PricePlan,
   Message,
   CategoryList,
-  ChatPage
+  ChatPage,
+  ProductView
 } from "./Pages";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/message" element={<Message />} />
           <Route path="/category" element={<CategoryList />} />
           <Route path="/chat" element={<ChatPage />} />
+          <Route path="/productview" element={<ProductView />} />
         </Routes>
       </BrowserRouter>
     </>

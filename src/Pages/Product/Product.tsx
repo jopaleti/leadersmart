@@ -352,7 +352,7 @@ function Product() {
           {/* Recommendation */}
           <div className="mt-6 py-6 px-3 rounded-lg shadow-lg">
             <h1 className="text-lg font-bold">Recommendation</h1>
-            <div className="mt-3 flex gap-7 items-stretch lg:flex-row flex-col flex-wrap">
+            <div className="mt-3 flex gap-4 items-stretch lg:flex-row flex-col flex-wrap">
               <div
                 className="rounded-lg overflow-hidden"
                 style={{ maxWidth: "312px", height: "auto" }}
