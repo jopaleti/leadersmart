@@ -44,6 +44,7 @@ import chain from "./chain.png";
 import fac from "./fac.png";
 import twi from "./twi.png";
 import ln from "./ln.png";
+import lelogo from "./lelogo.png";
 
 export {
   prof,
@@ -92,4 +93,5 @@ export {
   hand,
   chk,
   what,
+  lelogo
 };

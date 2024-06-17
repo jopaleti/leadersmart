@@ -1,4 +1,4 @@
-import { prof, rec } from "../../assets";
+import { lelogo, prof, rec } from "../../assets";
 import "./Vendor.scss";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
@@ -66,11 +66,10 @@ function VendorNavbar() {
       )}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="__logo flex items-center gap-3">
+          <div className="__logo flex justify-center items-center gap-3">
             <Link to="/">
-              <img src={rec} alt="logo.png" />
+              <img src={lelogo} className="h-14" alt="logo.png" />
             </Link>
-            <h1 className="text-lg font-semibold">Leathers’ Mart</h1>
           </div>
           <div className="flex items-center gap-5 justify-start __v_nav_middle">
             <select className="__nav_elem" name="nav-select" id="nav-select">

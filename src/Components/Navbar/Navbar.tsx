@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 import { useState } from "react";
-import { rec } from "../../assets";
+import { lelogo, rec } from "../../assets";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -15,7 +15,8 @@ function Navbar() {
       <div className="flex items-center justify-between __nav_bar">
         <div className="__logo flex items-center gap-3">
           <Link to="/">
-            <img src={rec} alt="logo.png" />
+            {/* <img src={rec} alt="logo.png" /> */}
+            <img src={lelogo} className="h-10" alt="logo.png" />
           </Link>
           <div>
             <button onClick={() => handleClose()}>

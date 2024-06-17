@@ -21,6 +21,7 @@ import CartPopup from "./CartPopup/CartPopup";
 import AddProduct from "./AddProduct/AddProduct";
 import MessageList from "./MessageList/MessageList";
 import UserSignUp from "./UserSignUp/UserSignUp";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 export {
   Navbar,
@@ -45,5 +46,6 @@ export {
   CartPopup,
   AddProduct,
   MessageList,
-  UserSignUp
+  UserSignUp,
+  ForgotPassword
 };

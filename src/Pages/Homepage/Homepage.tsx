@@ -1,4 +1,4 @@
-import { bag, coll, flash, frame, prof} from "../../assets";
+import { bag, coll, flash, frame, prof } from "../../assets";
 import {
   Card,
   LoginModal,
@@ -7,14 +7,21 @@ import {
   Reel,
   ShoeCard,
   VendorSignUp,
-  UserSignUp
+  UserSignUp,
+  ForgotPassword,
 } from "../../Components";
 import "./Homepage.scss";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
 import VendorFooter from "../../Components/VendorFooter/VendorFooter";
 
+import { useContext } from "react";
+import { MyContext } from "../../Context";
+
 function Homepage() {
+  const userContext: any = useContext(MyContext);
+  const { value, setValue } = userContext;
+
   const [openSignUp, setOpenSignUp] = useState(false);
   const [openSignin, setOpenSignIn] = useState(false);
   const [openSignUpX, setOpenSignUpX] = useState(false);
@@ -26,6 +33,7 @@ function Homepage() {
   const modalRef3: any = useRef();
   const modalRef4: any = useRef();
   const modalRef5: any = useRef();
+  const modalRef6: any = useRef();
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (modalRef1.current && !modalRef1.current.contains(event.target)) {
@@ -43,9 +51,12 @@ function Homepage() {
       if (modalRef5.current && !modalRef5.current.contains(event.target)) {
         setUserSignUpX(false);
       }
+      if (modalRef6.current && !modalRef6.current.contains(event.target)) {
+        setValue(false);
+      }
     };
 
-    if (openSignUpX || openSigninX || openSignin || openSignUp || UserSignUpX) {
+    if (openSignUpX || openSigninX || openSignin || openSignUp || UserSignUpX || value) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -54,7 +65,7 @@ function Homepage() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [openSigninX, openSignUpX, openSignUp, openSignin, UserSignUpX]);
+  }, [openSigninX, openSignUpX, openSignUp, openSignin, UserSignUpX, value]);
   return (
     <div style={{ backgroundColor: "#F1F1F1" }} className="relative">
       <div className="__chat_list fixed overflow-y-auto">
@@ -78,9 +89,15 @@ function Homepage() {
             <VendorSignUp />
           </div>
         )}
-        {openSignin && (
+        {!value && openSignin && (
           <div ref={modalRef4}>
             <LoginModal />
+            {/* <ForgotPassword /> */}
+          </div>
+        )}
+        {value && (
+          <div ref={modalRef6}>
+            <ForgotPassword />
           </div>
         )}
         {UserSignUpX && (

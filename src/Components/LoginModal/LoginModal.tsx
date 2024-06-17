@@ -1,7 +1,11 @@
 import "./LoginModal.scss";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { MyContext } from "../../Context";
 
 function LoginModal() {
+  const userContext: any = useContext(MyContext)
+  const { setValue } = userContext;
   const navigate = useNavigate();
   return (
     <div className="__signin__modal rounded-lg py-6 px-5 bg-white shadow-2xl">
@@ -88,16 +92,15 @@ function LoginModal() {
               style={{ backgroundColor: "#814631" }}
               onClick={() => navigate("/vendorprofile")}
             >
-              Create Personal Account
+              Login
             </button>
           </div>
           <div className="mt-4">
             <p className="font-medium" style={{ fontSize: "12px" }}>
-              Not a personal account?{" "}
-              <a style={{ color: "#814631" }}>
-                Sign up for a vendor’s
-                <br /> account
-              </a>
+              Forgot Password ?
+              <button className="ms-1" onClick={()=> setValue((prevState: any)=> !prevState)}>
+                <a style={{ color: "#814631" }}>Reset Your Password</a>
+              </button>
             </p>
           </div>
         </form>
