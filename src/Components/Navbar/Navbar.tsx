@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 import { useState } from "react";
-import { lelogo, rec } from "../../assets";
+import { lelogo} from "../../assets";
 import { Link } from "react-router-dom";
 
 function Navbar() {

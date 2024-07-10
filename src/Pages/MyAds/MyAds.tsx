@@ -1,5 +1,5 @@
 import { car } from "../../assets";
-import { AddProduct, CartPopup, VendorDashTemplate } from "../../Components";
+import { VendorDashTemplate } from "../../Components";
 import "./MyAds.scss";
 import { useState, useRef, useEffect } from "react";
 function MyAds() {

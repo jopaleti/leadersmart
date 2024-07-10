@@ -1,4 +1,4 @@
-import { lelogo, prof, rec } from "../../assets";
+import { lelogo, prof } from "../../assets";
 import "./Vendor.scss";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";

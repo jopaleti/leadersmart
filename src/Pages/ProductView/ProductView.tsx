@@ -1,4 +1,4 @@
-import { bed, chain, chk, fac, hand, lea, ln, pin, prof, shirt, shoe, star, twi, verif, what } from "../../assets";
+import { bed, chain, chk, fac, hand, lea, ln, pin, prof, shirt, star, twi, verif, what } from "../../assets";
 import VendorFooter from "../../Components/VendorFooter/VendorFooter";
 import VendorNavbar from "../../Components/VendorNavbar/VendorNavbar";
 import "./product.scss";
