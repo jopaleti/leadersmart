@@ -53,7 +53,7 @@ function ChatPage() {
             </div>
           </div>
           <div className="__friend_list">
-            {[1, 2, 34, 5, 6, 7].map((x, idx) => (
+            {[1, 2, 3, 4, 5, 6].map((idx) => (
               <div
                 key={idx}
                 className={`px-4 mt-3 flex items-start justify-between ${
